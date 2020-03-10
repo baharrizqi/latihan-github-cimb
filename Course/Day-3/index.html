@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let condition;
+ do {
+        let input = prompt('input angka dari 1 - 5')
+
+        if (input >5 || input <1) {
+            alert('angka tidak dalam range')
+            condition = true
+        }
+        else{
+            alert('angka anda adalah ' + input)
+            condition = false
+        }
+
+    }
+    while (condition) {
+        
+    }
+
+    /* let input = confirm ('hello') --> true
+        alert(input)
+
+        pr kemarin barang dan stock masih sama , kasih kesempatan ke user apabila salah input
+        di setiap prompt pasttin ada do while sendiri, setelah belannja bayar kalo misal kurang
+        kasih kesempatan untuk mengulangi pembayaran tidak dikurangin . setelah bayar kasih alert
+        mau belanja lagi apa tidak ? kalo mau belanja lagi stock diawal udah dikurangin sama stock
+        yang sudah dibeli.
+    */
+    </script>
+</body>
+</html>

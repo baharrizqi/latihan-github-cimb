@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        li {
+            color: greenyellow;
+        }
+    </style>
+    <center>
+
+        <h1 style="color: rgb(219, 10, 10);">Hello , I'm iBahri &#128540</h1>
+        <hr>
+        <img src="Gambar/027748200_1477455370-dr-strange.jpg" alt="" sizes="" srcset="">
+        <hr>
+        <p><i>i'm </i> full detecttive,Avenger , and Master</p>
+
+        <P><a href="#">Wooosh Magic Wow</a></P>
+        <h3>Contact Me Here</h3>
+
+        <ul>
+            <li><a href="https://github.com/">Github</a></li>
+            <li><a href="https://id-mpl.com/">MPL-ID</a></li>
+            <li><a href="https://purwadhika.com/">PURWADHIKA</a></li>
+        </ul>
+    </center>
+</html>

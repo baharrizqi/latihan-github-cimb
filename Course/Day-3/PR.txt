@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        let pricejeruk = 5000
+        let pricemangga = 5000
+        let priceleci = 5000
+        let priceapel = 5000
+
+        let stockjeruk = 10
+        let stockmangga = 20
+        let stockleci = 20
+        let stockapel = 10
+        do {
+            alert(`         Jeruk Rp. ${pricejeruk}/pcs (${stockjeruk} item dalam stock)
+    Mangga Rp. ${pricemangga}/pcs (${stockmangga} item dalam stock)
+    Leci Rp. ${priceleci}/pcs (${stockleci} item dalam stock)
+    Apel Rp. ${priceapel}/pcs (${stockapel} item dalam stock)`)
+
+
+            alert('Silakan Masukkan Berapa Buah yang ingin anda beli')
+            let condition;
+            do {
+                var belijeruk = prompt('Berapa Buah Jeruk yang ingin anda beli ?') * 1
+                if (belijeruk > stockjeruk) {
+                    alert('Stock yang anda minta melebihi batas')
+                    condition = true
+                }
+                else {
+                    condition = false
+                }
+            }
+            while (condition) {
+            }
+
+
+            do {
+                var belimangga = prompt('Berapa Buah Mangga yang ingin anda beli ?') * 1
+                if (belimangga > stockmangga) {
+                    alert('Stock yang anda minta melebihi batas')
+                    condition = true
+                }
+                else {
+                    condition = false
+                }
+            }
+            while (condition) {
+            }
+
+            do {
+                var belileci = prompt('Berapa Buah Leci yang ingin anda beli ?') * 1
+                if (belileci > stockleci) {
+                    alert('Stock yang anda minta melebihi batas')
+                    condition = true
+                }
+                else {
+                    condition = false
+                }
+            }
+            while (condition) {
+            }
+
+            do {
+                var beliapel = prompt('Berapa Buah Apel yang ingin anda beli ?') * 1
+                if (beliapel > stockapel) {
+                    alert('Stock yang anda minta melebihi batas')
+                    condition = true
+                }
+                else {
+                    condition = false
+                }
+            }
+            while (condition) {
+            }
+
+
+
+            let totalharga = (belijeruk * pricejeruk) + (belimangga * pricemangga) + (belileci * priceleci) +
+                (beliapel * priceapel)
+            alert('Jumlah yang harus anda bayar ' + totalharga)
+
+            do {
+                let uanganda = parseInt(prompt('Masukkan Uang Anda = '))
+                let rumusuang = uanganda - totalharga
+                if (rumusuang < 0) {
+                    alert('Uang anda kurang')
+                    alert('Anda harus membayar ' + totalharga)
+                    condition = true
+                }
+                else if (rumusuang > 0) {
+                    alert('Kembalian anda ' + rumusuang)
+                    condition = false
+                }
+                else if (rumusuang == 0) {
+                    alert('Uang anda pas Terima kasih Telah belanja di Bahar Bahri Store')
+                    condition = false
+                }
+
+            }
+            while (condition) {
+
+            }
+            var belilagi = confirm('Yakin Mau Beli lagi')
+            if (belilagi == true) {
+                stockjeruk = stockjeruk - belijeruk
+                stockmangga = stockmangga - belimangga
+                stockleci = stockleci - belileci
+                stockapel = stockapel - beliapel
+            }
+
+        }
+        while (belilagi == true) {
+
+        }
+
+    </script>
+</body>
+
+</html>

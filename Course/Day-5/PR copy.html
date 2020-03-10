@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahar Bahri</title>
+</head>
+<body>
+    <script>
+    let menu = ''
+    let inputUserMenu
+    let inputUserMenuIndex
+    let inputUserQty
+    let totalPrice
+    let userPayment
+    let nota
+    let arrData= [
+        {
+        Buah   : 'Jeruk',
+        Harga  : 5000,
+        Stock  : 10,
+        Beli   : 0
+        },
+        {
+        Buah    : 'Mangga',
+        Harga   : 5000,
+        Stock   : 20,
+        Beli    : 0 
+        },
+        {
+        Buah    : 'Apel',
+        Harga   : 5000,
+        Stock   : 10,
+        Beli    : 0
+        }
+    ]
+    let condition
+
+    do{
+        menu = '' 
+    for (let i = 0; i < arrData.length; i++) {
+        menu += `${i + 1}. ${arrData[i].Buah} Rp. ${arrData[i].Harga}/pcs (${arrData[i].Stock} items in stock)\n`
+        
+    }
+
+    menu += `${arrData.length + 1}. Checkout \n${arrData.length + 2}. Daftar Belanja`
+    inputUserMenu = prompt(menu)
+    inputUserMenuIndex = inputUserMenu - 1
+
+    if (inputUserMenu == arrData.length + 1) {
+        totalPrice = 0
+        for (let i = 0; i < arrData.length; i++) {
+        totalPrice += arrData[i].Harga * arrData[i].Beli
+      }
+      do{
+      userPayment = prompt(`Total belanjaan anda sebesar IDR ${totalPrice}`)
+
+      if (userPayment > totalPrice) {
+          alert(`Kembalian anda Rp. ${userPayment - totalPrice}`)
+          condition = false
+        } else if (userPayment < totalPrice) {
+          alert(`Uang anda kurang Rp. ${totalPrice - userPayment}`)
+          condition = true
+        } else if (userPayment == totalPrice) {
+          alert('Terima kasih sudah membayar dengan uang pas')
+          condition = false
+        }
+    }while(condition)
+
+    
+    for (let i = 0; i < arrInputs.length; i++) {
+        arrData[i].Stock -= arrData[i].Beli
+        arrData[i].Beli = 0
+    }
+    condition = confirm('Yakin mau Belanja lagi ?')
+    }else if (inputUserMenu == arrData.length + 2) {
+        nota = ''
+        for (let i = 0; i < arrData.length; i++) {
+            nota += `${arrData[i].Buah} beli ${arrData[i].Beli} pcs \n`
+        }
+        alert(`Daftar Belanja \n ${nota}`) 
+    }else{
+        do{
+        inputUserQty = parseInt(prompt(`Mau beli berapa ${arrData[inputUserMenuIndex].Buah}?`))
+
+        if (arrData[inputUserMenuIndex].Stock >= (inputUserQty + arrData[inputUserMenuIndex].Beli)) {
+            arrData[inputUserMenuIndex].Beli += inputUserQty
+            condition = false
+        }else{
+          alert(`Stock ${arrData[inputUserMenuIndex].Buah} tidak cukup`)
+          condition = true
+        }
+        }while(condition)
+        condition = true
+    }
+    
+}while(condition)
+
+
+    </script>
+</body>
+</html>

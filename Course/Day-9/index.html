@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <center>
+        <h1 style="font-size: 50pt;">TOKO iBahri</h1>
+        <hr>
+
+        <table id="1">
+            <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Stock</th>
+            </tr>
+        </table>
+        <hr style="color: blue;">
+        <table>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <td>Kolom 1</td>
+                <td>Kolom 2</td>
+                <td>Kolom 3</td>
+            </tr>
+            <tr>
+                <td>Kolom 1</td>
+                <td>Kolom 2</td>
+                <td>Kolom 3</td>
+            </tr>
+        </table>
+
+        <hr>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <hr>
+
+
+    </center>
+</body>
+<script>
+    class Produk {
+        constructor(Nama, Harga, Stock, Beli) {
+            this.Nama = Nama
+            this.Harga = Harga
+            this.Stock = Stock
+            this.Beli = Beli
+        }
+    }
+    class Clothing extends Produk {
+        constructor(Nama, Harga, Stock, Beli, Size) {
+            super(Nama, Harga, Stock, Beli)
+            this.Size = Size
+        }
+    }
+    class Buah extends Produk {
+        constructor(Nama, Harga, Stock, Beli, Expired) {
+            super(Nama, Harga, Stock, Beli)
+            this.Expired = Expired
+        }
+    }
+    class Elektronik extends Produk {
+        constructor(Nama, Harga, Stock, Beli, Garansi) {
+            super(Nama, Harga, Stock, Beli)
+            this.Garansi = Garansi
+        }
+    }
+
+    let arrData = [
+        new Buah('Jeruk', 5000, 10, 0, '2020-2-12'),
+        new Buah('Mangga', 5000, 20, 0, '2019-5-1'),
+        new Buah('Apel', 5000, 10, 0, '2020-5-2')
+    ]
+
+
+    let menu = ''
+    for (let i = 0; i < arrData.length; i++) {
+        menu += `
+            <tr>
+            <td>
+            ${i + 1}.
+            </td>
+            <td>
+            <strong>${arrData[i].Nama}</strong>
+            </td>
+            <td>
+            Rp. <i>${arrData[i].Harga}/pcs</i>
+            </td>
+            <td>
+            (${arrData[i].Stock} items in stock)
+            </td>
+            </tr>`
+
+    }
+    document.getElementById("1").innerHTML += menu
+
+    document.getElementsByTagName("p")[2].innerHTML = 'ganti'
+</script>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrItemNames = ['1. Jeruk', '2. Mangga', '3. Apel']
+        let keluar = '4. Checkout'
+        let arrPrice = [5000, 5000, 5000]
+        let arrStock = [10, 20, 10]
+        let input
+        let beli = [0, 0, 0]
+        let menu = ''
+
+        let inputjumlah
+        let jumlahbeli
+        var totalharga
+        var harga = 0
+
+        for (let i = 0; i < arrItemNames.length; i++) {
+            menu += `${arrItemNames[i]} Harga Rp. ${arrPrice[i]}/pcs ${arrStock[i]} item stock tersedia \n`
+        }
+        alert('SELAMAT DATANG DI BAHAR BAHRI STORE')
+        input = parseInt(prompt(`${menu}${keluar}`))
+
+        for (let j = 0; j < arrItemNames.length; j++) {
+            jumlahbeli = `${arrItemNames[i]} Harga Rp. ${arrPrice[i]}/pcs ${arrStock[i]} item stock tersedia`
+            if (input - 1 == j) {
+                inputjumlah = prompt(jumlahbeli)
+                beli[input - 1] += inputjumlah
+                if (inputjumlah > arrStock[j]) {
+                    alert('stok' + arrItemNames[j] + 'habis')
+                    condition = false
+                }
+                else {
+                    condition = true
+                }
+            }
+        }
+
+
+
+        /*
+        do {
+            input = parseInt(prompt(`${menu}${keluar}`))
+            if (input == 1) {
+                do{
+                beli[0] = prompt('Berapa Buah Jeruk yang ingin anda beli ?') * 1
+                if (beli[0]>arrStock[0]) {
+                    alert('Jumlah permintaan anda melebihi stock')
+                    condition = true
+                }
+                else{
+                condition = false
+                condition1 = true
+                }
+            }
+                while (condition) {
+
+                }
+            }
+            else if (input == 2) {
+                do{
+                beli[1] = prompt('Berapa Buah Mangga yang ingin anda beli ?') * 1
+                if (beli[1]>arrStock[1]) {
+                    alert('Jumlah permintaan anda melebihi stock')
+                    condition = true
+                }
+                else{
+                condition = false
+                condition1 = true
+                }
+            }
+                while (condition) {
+
+                }
+            }
+            else if (input == 3) {
+                do{
+                beli[2] = prompt('Berapa Buah Apel yang ingin anda beli ?') * 1
+                if (beli[2]>arrStock[2]) {
+                    alert('Jumlah permintaan anda melebihi stock')
+                    condition = true
+                }
+                else{
+                    condition = false
+                    condition1 = true
+                }
+            }
+            while (condition) {
+            }
+            }
+            else if (input == 4) {
+                for (var j = 0; j < arrItemNames.length; j++) {
+                totalharga = beli[j] *arrPrice[j]
+                harga += totalharga
+
+                }
+                alert('Jumlah yang harus dibayar '+harga)
+                do{
+                inputpayment = prompt('Masukkan uang anda')
+                perhitungan = inputpayment - harga
+                if (harga>inputpayment) {
+                    alert('Maaf uang anda kurang')
+                    condition = true
+                }
+                else if (harga<inputpayment) {
+                    alert('Kembalian anda ' +perhitungan)
+                    condition = false
+                }else if(harga == inputpayment){
+                    alert('Terima kasih uang anda pas')
+                    condition = false
+                }
+            }
+            while (condition) {
+            }
+            var condition1 = confirm('Yakin mau beli lagi ?')
+            if (condition1 == true) {
+                beli[j] = arrStock[j]-beli[j]
+            }
+            }
+        }
+        while (condition1) {
+
+        }
+*/
+
+    </script>
+</body>
+
+</html>

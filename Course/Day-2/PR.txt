@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahar Bahri Store</title>
+</head>
+
+<body>
+    <script>
+
+
+        let jeruk = 5000
+        let mangga = 5000
+        let leci = 5000
+        let apel = 5000
+
+        let a = 10
+        let b = 20
+        let c = 20
+        let d = 10
+
+        alert('Harga jeruk=..........' + jeruk + '..........Stock Jeruk........' + a + '\n' +
+            'Harga mangga=.....' + mangga + '........Stock Mangga......' + b + '\n' +
+            'Harga leci=...........' + leci + '.........Stock Leci............' + c + '\n' +
+            'Harga apel=.........' + apel + '...........Stock Apel..........' + d + '\n'
+        )
+
+        // let belia = parseInt(prompt('Jumlah beli Jeruk'))
+        // let belib = parseInt(prompt('Jumlah beli Mangga'))
+        // let belic = parseInt(prompt('Jumlah beli Leci'))
+        // let belid = parseInt(prompt('Jumlah beli Apel'))
+
+        alert('Silakan Masukkan Berapa Buah yang ingin anda beli')
+
+        let belia = prompt('Berapa Buah Jeruk yang ingin anda beli ?') * 1
+        let belib = prompt('Berapa Buah Mangga yang ingin anda beli ?') * 1
+        let belic = prompt('Berapa Buah Leci yang ingin anda beli ?') * 1
+        let belid = prompt('Berapa Buah Apel yang ingin anda beli ?') * 1
+
+        if (belia > a || belib > b || belic > c || belid > d) {
+            alert('Permintaan anda melebihi stock yang tersedia')
+        }
+            else {
+                let totalharga = parseInt((belia * jeruk) + (belib * mangga) + (belic * leci) + (belid * apel))
+                alert('Jumlah yang harus anda bayar ' + totalharga)
+
+                let uanganda = parseInt(prompt('Masukkan Uang Anda = '))
+                let rumusuang = uanganda - totalharga
+                if (rumusuang < 0) {
+                    alert('Uang anda kurang')
+                }
+                else if (rumusuang > 0) {
+                    alert('Kembalian anda ' + rumusuang)
+                }
+                else if (rumusuang == 0) {
+                    alert('Uang anda pas Terima kasih Telah belanja di Bahar Bahri Store')
+            }
+
+        }
+
+        /* 'Mangga Rp. ${priceMangga}/pcs (${stockMangga} item dalam stock)
+        apel Rp. ${priceapel}/pcs (${stockApel} item dalam stock)'
+        */
+
+    </script>
+</body>
+
+</html>

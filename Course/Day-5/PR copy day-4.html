@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrItemNames = ['Jeruk', 'Mangga', 'Apel']
+        let keluar = '4. Checkout'
+        let arrPrice = [5000, 5000, 5000]
+        let arrStock = [10, 20, 10]
+        let arrinputs = [0,0,0] 
+        let inputUserMenu;
+        let inputUserMenuIndex;
+        let inputUserQty
+        let isRepeat
+        let userPayment
+
+        let menu =''
+        let totalPrice
+       
+     
+
+
+do{
+    menu =''
+    for (let i = 0; i < arrItemNames.length; i++) {
+            menu += `${i+1}. ${arrItemNames[i]} Harga Rp. ${arrPrice[i]}/pcs ${arrStock[i]} item stock tersedia \n`
+        }
+
+        menu += `${arrItemNames.length+1}. Checkout`
+        inputUserMenu = prompt(menu)
+        inputUserMenuIndex = inputUserMenu - 1
+
+        if (inputUserMenu == arrItemNames.length+1) {
+            totalPrice = 0
+            for (let i = 0; i < arrItemNames.length; i++) {
+                totalPrice += arrPrice[i] *arrinputs[i]
+                
+            }
+            do{
+            userPayment = prompt(`Total belanja anda sebesar RP. ${totalPrice}`)
+            if (userPayment>totalPrice) {
+                alert(`Kembalian anda Rp ${userPayment-totalPrice}`)
+                isRepeat = false
+            }else if (userPayment<totalPrice) {
+                alert(`Uang anda kurang Rp ${totalPrice - userPayment}`)
+                isRepeat = true
+            }else if (userPayment == totalPrice) {
+                alert(`Terima kasih sudah membayar uang pas`)
+                isRepeat = false
+            }
+        }
+            while (isRepeat)  
+            
+            for (let i = 0; i < arrinputs.length; i++) {
+                arrStock[i] -= arrinputs[i]
+                arrinputs[i] = 0
+                
+            }
+            isRepeat = confirm('Belanja lagi ga ?')
+        }else{
+            do{
+            inputUserQty = prompt(`Mau Beli berapa ${arrItemNames[inputUserMenuIndex]}?`)
+            if (arrStock[inputUserMenuIndex]>= (inputUserQty + arrinputs[inputUserMenuIndex])) {
+                arrinputs[inputUserMenuIndex] += inputUserQty
+                isRepeat = false
+            }else{
+                alert(`Stock ${arrItemNames[inputUserMenuIndex]}`)
+                isRepeat = true
+
+            }
+        }       
+            while (isRepeat) 
+                
+            isRepeat = true
+        }
+    }while (isRepeat) 
+        
+    
+/*
+        alert('SELAMAT DATANG DI BAHAR BAHRI STORE')
+        do {
+            menu =''
+        for (let i = 0; i < arrItemNames.length; i++) {
+            menu += `${arrItemNames[i]} Harga Rp. ${arrPrice[i]}/pcs ${arrStock[i]} item stock tersedia \n`
+        }
+
+        
+            input = parseInt(prompt(`${menu}${keluar}`))
+            if (input == 1) {
+                do{
+                isi = prompt('Berapa Buah Jeruk yang ingin anda beli ?') * 1
+                if (isi>arrStock[0]) {
+                    alert('Jumlah permintaan anda melebihi stock')
+                    condition = true
+                }
+                else{
+                beli[0] += isi
+                arrStock[0] -= isi
+                condition = false
+                condition1 = true
+                }
+            }
+                while (condition) {
+                    
+                }
+            }
+            else if (input == 2) {
+                do{
+                isi = prompt('Berapa Buah Mangga yang ingin anda beli ?') * 1
+                if (isi>arrStock[1]) {
+                    alert('Jumlah permintaan anda melebihi stock')
+                    condition = true
+                }
+                else{
+                beli[1] += isi
+                arrStock[1] -= isi
+                condition = false
+                condition1 = true
+                }
+            }
+                while (condition) {
+                    
+                }
+            }
+            else if (input == 3) {
+                do{
+                isi = prompt('Berapa Buah Apel yang ingin anda beli ?') * 1
+                if (isi>arrStock[2]) {
+                    alert('Jumlah permintaan anda melebihi stock')
+                    condition = true
+                }
+                else{
+                    beli[2] += isi
+                    arrStock[2] -= isi
+                    condition = false
+                    condition1 = true
+                }
+            }
+            while (condition) {
+            }
+            }
+            else if (input == 4) {
+                do{
+                for (let j = 0; j < arrItemNames.length; j++) {
+                totalharga = beli[j] *arrPrice[j]
+                harga += totalharga
+                    
+                }
+                alert('Jumlah yang harus dibayar '+harga)
+                
+                inputpayment = prompt('Masukkan uang anda')
+                perhitungan = inputpayment - harga
+                if (harga>inputpayment) {
+                    alert('Maaf uang Anda kurang')
+                    condition = true
+                }
+                else if (harga<inputpayment) {
+                    alert('Kembalian anda ' +perhitungan)
+                    beli.fill(0)
+                    harga = 0
+                    condition = false
+                }else if(harga == inputpayment){
+                    alert('Terima kasih uang anda pas')
+                    beli.fill(0)
+                    harga = 0
+                    condition = false
+                }
+            }
+            while (condition) {
+            }
+            var condition1 = confirm('Yakin mau beli lagi ?')
+            }
+        }
+        while (condition1) {
+            
+        }
+
+*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+let sandiwch = 8
+let salad = 7 
+let burger = 10
+let ff = 5
+
+console.log(4*sandiwch + 5*salad + 2*burger + 7*ff)
+
